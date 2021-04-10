@@ -5,8 +5,7 @@ from verifier import verify
 if __name__ != '__main__':
     exit(0)
 
-hash_function, service, work, desired_token = get_public_challenge()
-print(desired_token)
+hash_function, service, work, desired_token = get_public_challenge(work=10)
 x, i = mint(hash_function, service, work, desired_token)
 print(f'Found x: {x} in {i} attempts')
 print(f'To what does "service + x" hash? {hash_function(service + x)}')
